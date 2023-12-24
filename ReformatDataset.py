@@ -2,6 +2,7 @@ from PIL import Image
 import os
 
 
+
 def load_data_set(test_folder_path):
     all_objects = os.listdir(test_folder_path)
 
@@ -18,7 +19,7 @@ def load_data_set(test_folder_path):
             img_path = os.path.join(class_folder_path, image_name)
             try:
                 img = Image.open(img_path)
-                resized_img = img.resize((150, 150))
+                resized_img = img.resize((224, 224))
                 resized_img.save(img_path)
 
             except:
